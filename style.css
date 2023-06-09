@@ -42,13 +42,18 @@ header h1{
 }
 .task-input{
     flex: 1 1 0%;
-    min-width: 180px;
+    min-width: 230px;
     background-color: var(--darker);
     color: white;
     padding: 1rem;
     border-radius: 10px;
     font-size: 1.25rem;
     margin-right: 0.5rem;
+}
+@media (max-width: 210px ){
+    .date-input{
+        width: 58px;
+    }
 }
 .task-input::placeholder {
     color: rgb(255, 255, 255);
