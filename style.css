@@ -44,12 +44,14 @@ header h1{
     flex: 1 1 0%;
     width: 100%;
     background-color: var(--darker);
-    color: white;
     padding: 1rem;
     border-radius: 10px;
     font-size: 1.25rem;
     margin-right: 0.5rem;
 }
+input[type="text"] {
+    color: rgb(255, 255, 255) !important; /* fallback for browsers that don't support caret-color */
+  }
 @media (min-width: 210px ){
     .date-input{
         width: 58px;
@@ -59,9 +61,6 @@ header h1{
         font-weight: 300;
     }
     .task-input{
-        font-size: 1rem;
-    }
-    input .sub-btn{
         font-size: 1rem;
     }
 }
@@ -76,9 +75,9 @@ header h1{
     .task-input{
         font-size: 1.25rem;
     }
-}
-.task-input::placeholder {
-    color: rgb(255, 255, 255);
+    .sub-btn{
+        font-size: 1.25rem;
+    }
 }
 .date-input{
      margin-right: 1rem;
@@ -90,10 +89,10 @@ header h1{
      cursor: pointer;
 }
 .date-input{
- color: white;
+ color: var(--light);
 }
 .sub-btn {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color : var(--purple);
     cursor: pointer;
 }

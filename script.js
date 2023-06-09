@@ -1,21 +1,26 @@
 const form = document.querySelector('.new-task');
-const inputText = document.querySelector('.task-input');
-const inputDate = document.querySelector('.date-input');
-const tasks = document.querySelector('.tasks');
+const reset = document.querySelector('.delete-btn')
+
 const taskName = document.querySelector('.task-name');
 const dueDate = document.querySelector('.task-date');
 
-const task = [];
-let toDoList = '';
 
+const task = [];
+
+window.addEventListener('load', function(){
+    form.reset();
+}); 
+
+renderToDo();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     addtoList();
     form.reset();
 });
 
-function addtoList(){
-    task.push({ taskname:inputText.value, taskdate:inputDate.value });
+function renderToDo(){
+    let toDoList = '';
+    const tasks = document.querySelector('.tasks');
     for(let i=0; i < task.length; i++){
         const toDo = task[i];
         const { taskname } = toDo;
@@ -33,11 +38,23 @@ function addtoList(){
             </span>
             <div class="actions">
                 <button class="edit-btn" id="edit">Edit</button>
-                <button class="delete-btn" id="delete">Delete</button>
+                <button
+                onClick="toDo.splice(${i}, 1);
+                renderToDo();" 
+                class="delete-btn" 
+                id="delete">Delete</button>
             </div> 
         </div>`;
-        tasks.innerHTML = html;
         toDoList += html;
+        tasks.innerHTML = toDoList;
     }
-console.log(task); 
 }
+
+function addtoList(){
+    const inputText = document.querySelector('.task-input');
+    const inputDate = document.querySelector('.date-input');
+    const inputTask = { taskname:inputText.value, taskdate:inputDate.value };
+    task.push(inputTask);
+    renderToDo();
+}
+
