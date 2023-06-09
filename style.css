@@ -63,7 +63,7 @@ header h1{
 }
 .sub-btn {
     font-size: 1.25rem;
-    color : linear-gradient(to right, var(--purple), var(--pink));
+    color : var(--purple);
     cursor: pointer;
 }
 .sub-btn:hover{
@@ -116,7 +116,7 @@ main{
     border: none;
     outline: none;
     background: none;
-    color: linear-gradient(to right, var(--purple), var(--pink));
+    color: var(--purple);
     cursor: pointer;
 }
 .edit-btn{
