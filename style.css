@@ -70,6 +70,7 @@ header h1{
      padding: 1rem;
      border-radius: 10px;
      font-size: 1.25rem;
+     cursor: pointer;
 }
 .sub-btn {
     font-size: 1.25rem;
