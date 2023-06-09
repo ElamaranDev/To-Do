@@ -63,10 +63,7 @@ header h1{
 }
 .sub-btn {
     font-size: 1.25rem;
-    color: var(--purple);
-    background-image: linear-gradient(to right, var(--purple), var(--pink));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color : linear-gradient(to right, var(--purple), var(--pink));
     cursor: pointer;
 }
 .sub-btn:hover{
