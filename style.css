@@ -119,10 +119,7 @@ main{
     border: none;
     outline: none;
     background: none;
-    color: var(--purple);
-    background-image: linear-gradient(to right, var(--purple), var(--pink));
-    -webkit-text-fill-color: transparent;
-    background-clip: content-box;
+    color: linear-gradient(to right, var(--purple), var(--pink));
     cursor: pointer;
 }
 .edit-btn{
