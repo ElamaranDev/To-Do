@@ -120,7 +120,7 @@ main{
     color: var(--purple);
     background-image: linear-gradient(to right, var(--purple), var(--pink));
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    background-clip: text;
     cursor: pointer;
 }
 .edit-btn{
