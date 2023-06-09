@@ -54,10 +54,27 @@ header h1{
     .date-input{
         width: 58px;
     }
+    header h1{
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+    .task-input{
+        font-size: 1rem;
+    }
+    input .sub-btn{
+        font-size: 1rem;
+    }
 }
 @media (min-width: 750px){
     .date-input{
         width: 200px;
+    }
+    header h1{
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+    .task-input{
+        font-size: 1.25rem;
     }
 }
 .task-input::placeholder {
