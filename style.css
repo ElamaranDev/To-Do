@@ -1,0 +1,128 @@
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #EEE;
+    --inside-text: rgb(223, 223, 223);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--light);
+}
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+header h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.new-task{
+   display: flex;
+}
+
+.task-input, .date-input, .sub-btn{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+.task-input{
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+.task-input::placeholder {
+    color: rgb(223, 223, 223);
+}
+.date-input{
+     margin-right: 1rem;
+     background-color: var(--darker);
+     color: var(--inside-text);
+     padding: 1rem;
+     border-radius: 10px;
+     font-size: 1.25rem;
+}
+.sub-btn {
+    font-size: 1.25rem;
+    color: var(--purple);
+    background-image: linear-gradient(to right, var(--purple), var(--pink));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+.sub-btn:hover{
+    opacity: 0.8;
+}
+.sub-btn:active{
+    opacity: 0.6;
+}
+main{
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+.task-list{
+    padding: 1rem;
+}
+.task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.tasks .task{
+    display: flex;
+    background-color: var(--darker);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.task-name{
+    flex: 1 1 0%;
+    font-size: 1rem;
+    max-width: 450px;
+    margin-right: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+.task-date{
+    margin-right: 1rem;
+}
+.edit-btn, .delete-btn{
+    font-size: 1rem;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--purple);
+    background-image: linear-gradient(to right, var(--purple), var(--pink));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    cursor: pointer;
+}
+.edit-btn{
+    margin-right: 1rem;
+}
