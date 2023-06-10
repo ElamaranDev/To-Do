@@ -130,7 +130,6 @@ function editTask(i) {
         if(taskInput.value !== previousValue) 
         {
             task[i].taskname = taskInput.value;
-            taskInput.setAttribute('placeholder', taskInput.value);
             saveTaskList();
         }
     }
