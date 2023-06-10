@@ -116,11 +116,13 @@ function retriveTaskList(){
 function editTask(i) {
     const edit = document.querySelector(`[data-index="${i}"] .edit-btn`);
     const taskInput = document.querySelector(`[data-index="${i}"] .task-name`);
+    var preValue = taskInput.placeholder;
     var previousValue = '';
     if(edit.innerHTML === 'Edit'){
         edit.innerHTML = 'Save';
         taskInput.removeAttribute('readonly');
-        previousValue = taskInput.value;
+        console.log(preValue);
+        taskInput.value = preValue;
     }
     else{
         edit.innerHTML = 'Edit';
@@ -128,6 +130,7 @@ function editTask(i) {
         if(taskInput.value !== previousValue) 
         {
             task[i].taskname = taskInput.value;
+            taskInput.setAttribute('placeholder', taskInput.value);
             saveTaskList();
         }
     }
