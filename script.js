@@ -1,9 +1,8 @@
 const form = document.querySelector('.new-task');
-const reset = document.querySelector('.delete-btn')
+const del = document.querySelector('.delete-btn');
 
 const taskName = document.querySelector('.task-name');
 const dueDate = document.querySelector('.task-date');
-
 
 const task = [];
 
@@ -12,6 +11,7 @@ window.addEventListener('load', function(){
 }); 
 
 renderToDo();
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     addtoList();
@@ -27,6 +27,9 @@ function renderToDo(){
         const { taskdate } = toDo;
         const html = `
         <div class="task">
+            <span id="task-num" class="task-num">
+            ${i + 1}
+            </span>
             <input
                 class="task-name"
                 type="text"
@@ -39,17 +42,20 @@ function renderToDo(){
             <div class="actions">
                 <button class="edit-btn" id="edit">Edit</button>
                 <button
-                onClick="toDo.splice(${i}, 1);
-                renderToDo();" 
+                onclick="
+                task.splice(${i}, 1);
+                renderToDo();"
                 class="delete-btn" 
                 id="delete">Delete</button>
             </div> 
         </div>`;
         toDoList += html;
-        tasks.innerHTML = toDoList;
+    }
+    tasks.innerHTML = toDoList;
+    if (task.length === 0) {
+        tasks.innerHTML = '';
     }
 }
-
 function addtoList(){
     const inputText = document.querySelector('.task-input');
     const inputDate = document.querySelector('.date-input');
