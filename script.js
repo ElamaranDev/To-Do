@@ -71,9 +71,9 @@ function renderToDo(){
 
         const editButtons = document.querySelectorAll('.edit-btn');
         editButtons.forEach((editButton, i) => {
-            editButton.addEventListener('mouseup', () => {
+            editButton.addEventListener('click', function(){
                 editTask(i);
-            });
+            }, true);
         });
 }
 
@@ -131,6 +131,7 @@ function editTask(i) {
         {
             task[i].taskname = taskInput.value;
             saveTaskList();
+            renderToDo();
         }
     }
 }
