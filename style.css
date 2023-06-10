@@ -96,6 +96,7 @@ header h1{
 }
 .sub-btn {
     font-size: 1rem;
+    font-weight: bolder;
     color : var(--purple);
     cursor: pointer;
     background-clip: text;
