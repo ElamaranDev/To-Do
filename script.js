@@ -120,7 +120,6 @@ function editTask(i) {
     if(edit.innerHTML === 'Edit'){
         edit.innerHTML = 'Save';
         taskInput.removeAttribute('readonly');
-        taskInput.focus();
         previousValue = taskInput.value;
     }
     else{
