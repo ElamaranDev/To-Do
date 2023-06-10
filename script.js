@@ -1,8 +1,8 @@
 const form = document.querySelector('.new-task');
 const del = document.querySelector('.delete-btn');
-
 const taskName = document.querySelector('.task-name');
 const dueDate = document.querySelector('.task-date');
+
 
 let task = [];
 
