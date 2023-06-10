@@ -39,7 +39,6 @@ function renderToDo(){
             ${i + 1}
             </span>
             <input
-                onclick="openPopup(${i})"
                 class="task-name"
                 type="text"
                 value=""
@@ -133,13 +132,4 @@ function editTask(i) {
             saveTaskList();
         }
     }
-}
-function openPopup(i) {
-    const task = task[i];
-    popupTaskName.textContent = task.taskname;
-    popupOverlay.style.display = 'block';
-}
-
-function closePopup() {
-    popupOverlay.style.display = 'none';
 }
