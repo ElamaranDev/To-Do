@@ -4,10 +4,12 @@ const del = document.querySelector('.delete-btn');
 const taskName = document.querySelector('.task-name');
 const dueDate = document.querySelector('.task-date');
 
-const task = [];
+let task = [];
 
 window.addEventListener('load', function(){
     form.reset();
+    retriveTaskList();
+    renderToDo();
 }); 
 
 renderToDo();
@@ -44,14 +46,15 @@ function renderToDo(){
                 <button
                 onclick="
                 task.splice(${i}, 1);
+                saveTaskList();
                 renderToDo();"
                 class="delete-btn" 
                 id="delete">Delete</button>
             </div> 
         </div>`;
         toDoList += html;
+        tasks.innerHTML = toDoList;
     }
-    tasks.innerHTML = toDoList;
     if (task.length === 0) {
         tasks.innerHTML = '';
     }
@@ -61,6 +64,19 @@ function addtoList(){
     const inputDate = document.querySelector('.date-input');
     const inputTask = { taskname:inputText.value, taskdate:inputDate.value };
     task.push(inputTask);
+    saveTaskList();
     renderToDo();
 }
+function saveTaskList(){
+    localStorage.setItem('Task', JSON.stringify(task));
+}
 
+function retriveTaskList(){
+    const TaskList = localStorage.getItem('Task');
+    if(TaskList){
+        task = JSON.parse(TaskList);
+    }
+    else{
+        task = [];
+    }
+}
